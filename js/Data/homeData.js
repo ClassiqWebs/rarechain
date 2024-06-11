@@ -1,36 +1,97 @@
 //HOGE MAGE
 
+// Check if wallet is connected
+if (provider.connected) {
+  // Wallet is connected, update UI accordingly
+  document.getElementById("connectWalletButton").innerText = "Connected";
+  document.getElementById("connectWalletButton").disabled = true;
+} else {
+  // Wallet is not connected, update UI accordingly
+  document.getElementById("connectWalletButton").innerText = "Connect Wallet";
+  document.getElementById("connectWalletButton").disabled = false;
+}
+document
+  .getElementById("connectWalletButton")
+  .addEventListener("click", async () => {
+    try {
+      // Enable session (triggers QR Code modal)
+      await provider.enable();
+
+      // Optionally, handle the provider events (e.g., disconnect, chainChanged, etc.)
+      provider.on("disconnect", (code, reason) => {
+        console.log("Disconnected:", code, reason);
+      });
+
+      // Once connected, you can use the provider for Web3 interactions
+      const web3 = new Web3(provider);
+      // Your Web3 interactions here...
+    } catch (error) {
+      console.error("Failed to connect wallet:", error);
+    }
+  });
+
+document
+  .getElementById("connectWalletButton")
+  .addEventListener("click", async () => {
+    try {
+      // Enable session (triggers QR Code modal)
+      await provider.enable();
+
+      // Optionally, handle the provider events (e.g., disconnect, chainChanged, etc.)
+      provider.on("disconnect", (code, reason) => {
+        console.log("Disconnected:", code, reason);
+      });
+
+      // Once connected, you can use the provider for Web3 interactions
+      const web3 = new Web3(provider);
+      // Your Web3 interactions here...
+    } catch (error) {
+      console.error("Failed to connect wallet:", error);
+    }
+  });
+
+// Check if wallet is connected
+if (provider.connected) {
+  // Wallet is connected, update UI accordingly
+  document.getElementById("connectWalletButton").innerText = "Connected";
+  document.getElementById("connectWalletButton").disabled = true;
+} else {
+  // Wallet is not connected, update UI accordingly
+  document.getElementById("connectWalletButton").innerText = "Connect Wallet";
+  document.getElementById("connectWalletButton").disabled = false;
+}
+
 const upcoming = [
   {
-    contract: "TBCoders",
-    total: "300",
-    value: 44,
+    contract: "Master Nodes",
+    total: "1300",
+    value: 440,
     status: "Active",
-    period: 7,
+    period: 8,
   },
   {
-    contract: "MataCoin",
+    contract: "Full Nodes",
     total: "500",
     value: 114,
     status: "Active",
-    period: 10,
+    period: 8,
   },
   {
-    contract: "Blockchain",
-    total: "31",
+    contract: "Validator Node",
+    total: "131",
     value: 441,
     status: "Active",
-    period: 32,
+    period: 12,
   },
   {
-    contract: "MEME Coin",
+    contract: "Lightning Node",
     total: "1300",
     value: 424,
     status: "Active",
-    period: 60,
+    period: 12,
   },
   {
-    contract: "NEW ECIT",
+    contract: "Private Node",
     total: "5500",
     value: 234,
     status: "Active",
@@ -40,24 +101,24 @@ const upcoming = [
 const IGO = [1, 2, 3, 4, 5];
 const users = [
   {
-    name: "Shoaib Bhai",
-    role: "scientist",
+    name: "Master Node",
+    role: "Active",
   },
   {
-    name: "Daulat",
-    role: "Coder",
+    name: "Full Nodes",
+    role: "Active",
   },
   {
-    name: "Shanawaz",
-    role: "Doctor",
+    name: "Validator Nodes",
+    role: "Active",
   },
   {
-    name: "Md Faiz",
-    role: "Doctor",
+    name: "Lightning Node",
+    role: "Active",
   },
   {
-    name: "Tajuddin",
-    role: "Business",
+    name: "Private Node",
+    role: "Null",
   },
 ];
 const footerMenu = [
@@ -144,32 +205,13 @@ const displyInHTML = upcoming.map((upcoming, i) => {
       >
         <a
           class="btn btn-bordered-white btn-smaller"
-          href="project-details.html"
-          >Details</a
+          href="staking-1.html"
+          >Run Node</a
         >
         <!-- Social Share -->
         <div class="social-share ml-auto">
           <ul class="d-flex list-unstyled">
-            <li>
-              <a href="#">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fab fa-telegram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fas fa-globe"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fab fa-discord"></i>
-              </a>
-            </li>
+           
           </ul>
         </div>
       </div>
@@ -200,8 +242,8 @@ const displyInHTMLIGO = IGO.map((IGO, i) => {
           alt=""
         />
         <div class="content ml-4">
-          <h4 class="m-0">Ancient Kingdom</h4>
-          <h6 class="mt-3 mb-0">Price (GAC) = 0.89 BUSD</h6>
+          <h4 class="m-0">Desk Node</h4>
+          <h6 class="mt-3 mb-0">Price (GAC) = 400.89 BUSD</h6>
         </div>
       </div>
       <div class="blockchain d-inline-block mr-1 mr-md-0">
@@ -215,7 +257,7 @@ const displyInHTMLIGO = IGO.map((IGO, i) => {
       </div>
       <div class="single-item">
         <span>ATH:</span>
-        <span>$1.06298</span>
+        <span>$115045250.06298</span>
       </div>
     </div>
     <a class="project-link" href="project-details.html"></a>
@@ -250,12 +292,12 @@ const displyInHTMLUser = users.map((user, i) => {
         <ul class="d-flex justify-content-center list-unstyled">
           <li>
             <a href="#">
-              <i class="icon-social-twitter"></i>
+              <i class="icon-wallet"></i>
             </a>
           </li>
           <li>
             <a href="#">
-              <i class="icon-social-linkedin"></i>
+              <i class="icon-vector"></i>
             </a>
           </li>
         </ul>

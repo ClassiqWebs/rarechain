@@ -7,6 +7,12 @@ async function main() {
   await tokenStaking.waitForDeployment();
 
   console.log(` STACKING: ${tokenStaking.target}`);
+  //FundMe
+  const fundme = await hre.ethers.deployContract("FundMe");
+
+  await fundme.waitForDeployment();
+
+  console.log(` FUNDME: ${fundme.target}`);
   //TOKEN
   const rarechain = await hre.ethers.deployContract("Rarechain");
 

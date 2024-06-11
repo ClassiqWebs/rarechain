@@ -9,7 +9,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+</head>
     <!-- Title  -->
     <title>
       Rare Chain Node Network - Create and Run Your Own Node Network
@@ -85,7 +85,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="staking-1.html" class="nav-link">Invest</a>
+                <a href="staking-1.html" class="nav-link">Acquire Nodes</a>
               </li>
 
               <li class="nav-item">
@@ -130,8 +130,9 @@
             <!-- Navbar Action Button -->
             <ul class="navbar-nav action">
               <li class="nav-item ml-2">
-                <a class="btn ml-lg-auto btn-bordered-white"
-                  ><i class="icon-wallet mr-md-2"></i>Wallet Connect</a
+                <a class="btn ml-lg-auto btn-bordered-white" onclick="connectWallet()"><img src="metamasklogo.webp" alt="Wallet Icon" style="width: 20px; height: 20px; margin-right: 8px;"> Connect Wallet</a>
+
+                  ><i class="icon-wallet mr-md-2"></i></a
                 >
               </li>
             </ul>
@@ -149,10 +150,9 @@
               <div class="hero-content">
                 <div class="intro text-center mb-5">
                   <span class="intro-text">Rare Chain Node Network</span>
-                  <h1 class="mt-4">Invest In Node Networks and Earn Rewards</h1>
+                  <h1 class="mt-4">Acquire Nodes and Earn Rewards</h1>
                   <p>
-                    You Will Run Nodes For Specific Duration and Earn Rewards
-                    After Duration is Due.
+                    All Blockchain Nodes running on RCN are connected to the Ethereum Network.
                   </p>
                 </div>
                 <!-- Buttons -->
@@ -172,26 +172,53 @@
         </div>
       </section>
       <!-- ***** Hero Area End ***** -->
+<!-- TradingView Widget BEGIN -->
 
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+  {
+  "width": "100%",
+  "height": "300",
+  "defaultColumn": "performance",
+  "screener_type": "crypto_mkt",
+  "displayCurrency": "USD",
+  "colorTheme": "dark",
+  "locale": "en",
+  "isTransparent": true,
+  "largeChartUrl": "https://www/rarechain.io"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget END -->
       <!-- ***** Project Area Start ***** -->
       <section id="explore" class="project-area">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <!-- Intro -->
+              
               <div
                 class="intro d-flex justify-content-between align-items-end m-0"
               >
                 <div class="intro-content">
-                  <span class="intro-text">Explore Nodes</span>
-                  <h3 class="mt-3 mb-0">Available Nodes</h3>
+                  
+                  <span class="intro-text">Convert to Ethereum</span>
+                  <h3 class="mt-3 mb-0">Convert to Ethereum Node Valuation</h3>
                 </div>
+
+                
                 <div class="intro-btn">
                   <a class="btn content-btn" href="project-2.html">View More</a>
                 </div>
               </div>
             </div>
           </div>
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget amount="1" shadow="true" symbol="true" live="true" fiat="united-states-dollar" crypto="ethereum" font-family="inherit" background-color="#090a1a" decimal-places="2" border-radius="0.5rem"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">Rarechain</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
+<!--//coingeko -->
           <div class="project-slides">
             <div class="swiper-container slider-mid items">
               <div class="swiper-wrapper contract-list">
@@ -341,7 +368,7 @@
                       alt=""
                     />
                     <div class="content ml-4">
-                      <h4 class="m-0">Ancient Kingdom</h4>
+                      <h4 class="m-0">Loop Nodes </h4>
                       <h6 class="mt-3 mb-0">Price (GAC) = 0.89 BUSD</h6>
                     </div>
                   </div>
@@ -406,7 +433,7 @@
                         <p class="mt-3">
                           The connected wallet is used to fund Node activities.
                           Rewards are also crdeited to the same wallet funding
-                          the node activities.
+                          the node activity.
                         </p>
                       </div>
                     </div>
@@ -422,8 +449,8 @@
                       <div class="content-body ml-4">
                         <h3 class="m-0">Choose Node</h3>
                         <p class="mt-3">
-                          Choose any Node network and make sure to send
-                          specified funds to Network to activate the Node.
+                          Choose a Node and make sure to send the
+                          specified value to run the Node Network.
                         </p>
                       </div>
                     </div>
@@ -442,7 +469,7 @@
                           Nodes run for specified duration, Rewards are
                           automatically sent to the wallet address in contract
                           the Node. NB: Early Reward withdrawals comes with
-                          ignificant gas fee charges
+                          significant gas fee charges.
                         </p>
                       </div>
                     </div>
@@ -487,15 +514,8 @@
               <div
                 class="intro d-flex justify-content-between align-items-end m-0"
               >
-                <div class="intro-content">
-                  <span class="intro-text">Available Nodes</span>
-                  <h3 class="mt-3 mb-0">Available Nodes</h3>
-                </div>
-                <div class="intro-btn">
-                  <a class="btn content-btn" href="leaderboard.html"
-                    >View Leading Nodes</a
-                  >
-                </div>
+               
+                
               </div>
             </div>
           </div>
@@ -594,8 +614,8 @@
                 <i class="icons icon-fire text-effect"></i>
                 <h4>Choose Node</h4>
                 <p>
-                  Choose any Node network and make sure to send specified funds
-                  to Network to activate the Node.
+                  Choose any Node network and make sure to send the specified value
+                   to activate the Node.
                 </p>
               </div>
             </div>
@@ -626,21 +646,21 @@
                   <img src="assets/img/content/cta_thumb.png" alt="" />
                 </div>
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
-                  <h2 class="m-0">Connect Wallet</h2>
+                  <h2 class="m-0">Acquire Nodes</h2>
                   <p>
-                    You can connect via mobile or PC and invest in the available
-                    node. Always run node till specified duration to earn
-                    complete reward, abruptly ending node activities will result
-                    to lost tranactions and will cost some fee.
+                    You can connect only via metamask and acquire available
+                    nodes. Always run node till specified duration to earn
+                    complete reward. Abruptly ending nodes will result
+                    to friction in node operations and will cost some gas fees.
                   </p>
                   <a
                     class="btn btn-bordered active d-inline-block"
-                    href="apply.html"
-                    ><i class="icon-wallet mr-2"></i>Connect Wallet</a
+                    href="wallet-connect.html"
+                    ><i class="icon-wallet mr-2"></i>Acquire Nodes</a
                   >
                 </div>
               </div>
-              <a class="cta-link" href="apply.html"></a>
+              <a class="cta-link" href="wallet-connect.html"></a>
             </div>
           </div>
         </div>
@@ -716,7 +736,7 @@
                 </ul>
                 <!-- Copyright Area -->
                 <div class="copyright-area py-4">
-                  &copy;2024 Rare Chain Network, All Rights Reserved By
+                  &copy;All Rights Reserved By
                   <a href="#" target="_blank">Rare Chain Network</a>
                 </div>
               </div>
@@ -731,7 +751,18 @@
         </div>
       </footer>
       <!--====== Footer Area End ======-->
-
+      <div id="cr-widget-marquee"
+      data-coins="ethereum,tron,bnb,monero,bitcoin,dogecoin,toncoin,shiba-inu,usdcoin"
+      data-theme="dark"
+      data-show-symbol="true"
+      data-show-icon="true"
+      data-show-period-change="true"
+      data-period-change="24H"
+      data-api-url="https://api.cryptorank.io/v0"
+    >
+      <a href="https://cryptorank.io">Coins by Cryptorank</a>
+      <script src="https://cryptorank.io/widget/marquee.js"></script>
+    </div>
       <!--====== Modal Search Area Start ======-->
       <div id="search" class="modal fade p-0">
         <div class="modal-dialog dialog-animated">
@@ -808,9 +839,9 @@
     <!-- Active js -->
     <script src="js/Data/homeData.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <script src="coinscript.js"></script>
     <script src="js/web3.min.js"></script>
-
+   
     <script src="js/header.js"></script>
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>

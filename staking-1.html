@@ -127,17 +127,18 @@
               </li>
             </ul>
 
-            <!-- Navbar Action Button -->
-            <ul class="navbar-nav action">
-              <li class="nav-item ml-2">
-                <a class="btn ml-lg-auto btn-bordered-white"
-                  ><i class="icon-wallet mr-md-2"></i>Wallet Connect</a
-                >
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+           <!-- Navbar Action Button -->
+           <ul class="navbar-nav action">
+            <li class="nav-item ml-2">
+              <a class="btn ml-lg-auto btn-bordered-white" onclick="connectWallet()"><img src="metamasklogo.webp" alt="Wallet Icon" style="width: 20px; height: 20px; margin-right: 8px;"> Connect Wallet</a>
+
+                ><i class="icon-wallet mr-md-2"></i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
       <!-- ***** Header End ***** -->
 
       <!-- ***** Breadcrumb Area Start ***** -->
@@ -147,11 +148,11 @@
             <div class="col-12">
               <!-- Breamcrumb Content -->
               <div class="breadcrumb-content text-center">
-                <h2 class="m-0">Staking</h2>
+                <h2 class="m-0">Purchase Nodes</h2>
                 <ol class="breadcrumb d-flex justify-content-center">
                   <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Staking</a></li>
-                  <li class="breadcrumb-item active">Staking</li>
+                  <li class="breadcrumb-item"><a href="#">Active</a></li>
+                  <li class="breadcrumb-item active">Acquire Node</li>
                 </ol>
               </div>
             </div>
@@ -166,8 +167,40 @@
           <div class="row">
             <div class="col-12 col-md-7">
               <div class="card no-hover staking-card single-staking">
-                <h3 class="m-0">Purchase Nodes</h3>
-                <span class="balance">1,256.50 RCN Left on Standby</span>
+                <h3 class="m-0">Acquire Node</h3>
+                <span class="balance"></span> 
+              </br>
+                <label for="category">Select Node Category:</label>
+    <select id="category" name="category">
+      <option value="Master">Master</option>
+      <option value="Full">Full</option>
+      <option value="Validator">Validator</option>
+      <option value="Lightning">Lightning</option></select
+    ><br /><br />
+    <label for="contributeAmount">Enter Node Value (ETH):</label>
+    <input
+      type="number"
+      id="contributeAmount"
+      name="contributeAmount"
+      min="100"
+      max="180000"
+    /><br /><br />
+    <style>
+      button {
+          background-color: #0047ff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+
+      button:hover {
+          background-color: #042373;
+      }
+  </style>
+    <button onclick="contribute()">Acquire Node</button><br /><br />
                 <ul
                   class="nav nav-tabs staking-tabs border-0 my-3 my-md-4"
                   id="myTab"
@@ -238,6 +271,7 @@
                     aria-labelledby="tab-one-tab"
                   >
                     <div class="staking-tab-content">
+                      
                       <!-- Info Box -->
                       <div class="info-box d-flex justify-content-between">
                         <div class="info-left">
@@ -437,58 +471,6 @@
                   </div>
                 </div>
 
-                <div class="input-box my-4">
-                  <p id="user-token-balance">Balance: 0</p>
-                  <div
-                    id="stake-btn-block-show-hide"
-                    class="input-area d-flex flex-column flex-md-row mb-3"
-                  >
-                    <div class="input-text">
-                      <input
-                        type="text"
-                        placeholder="0.00"
-                        id="amount-to-stack-value-new"
-                      />
-                      <a>Max</a>
-                    </div>
-                    <span
-                      class="btn input-btn mt-2 mt-md-0 ml-md-3"
-                      onclick="stackTokens()"
-                      >Purchase</span
-                    >
-                  </div>
-                  <div class="input-area d-flex flex-column flex-md-row mb-3">
-                    <div class="input-text">
-                      <input
-                        type="text"
-                        placeholder="0.00"
-                        id="amount-to-unstack-value"
-                      />
-                      <a>Max</a>
-                    </div>
-                    <a
-                      onclick="unstackTokens()"
-                      class="btn input-btn mt-2 mt-md-0 ml-md-3"
-                      >Retrieve</a
-                    >
-                  </div>
-
-                  <div class="input-area d-flex flex-column flex-md-row">
-                    <div class="input-text">
-                      <input
-                        type="text"
-                        placeholder="0.00"
-                        id="user-reward-balance-value"
-                      />
-                    </div>
-                    <a
-                      onclick="claimTokens()"
-                      class="btn input-btn mt-2 mt-md-0 ml-md-3"
-                    >
-                      Auto Return</a
-                    >
-                  </div>
-                </div>
                 <span
                   >Once you purchase Node it automatically start running, early
                   turn of or abort attracts a certain fee according to
@@ -496,19 +478,25 @@
                   ROI is automaically deposited to Address in contract with node
                   .
                 </span>
-                <span class="mt-3"><strong>*APY is dynamic.</strong></span>
+                <span class="mt-3"
+                  ><strong
+                    >*APY is dynamic, Always Fund between the Minimum and
+                    Maximum for each Node plan to avoid rift in
+                    structure.</strong
+                  ></span
+                >
               </div>
             </div>
             <div class="col-12 col-md-5">
               <div class="staking-items mt-4 mt-md-0">
                 <!-- Single Card -->
                 <div class="card no-hover staking-card">
-                  <h3 id="total-locked-tokens-value" class="m-0">11,000 RCN</h3>
+                  <h3 id="total-locked-tokens-value" class="m-0">View in Dashboard</h3>
                   <p>Total Value Inactive</p>
                 </div>
                 <!-- Single Card -->
                 <div class="card no-hover staking-card my-4">
-                  <h3 id="total-locked-user-token" class="m-0">15,000 RCN</h3>
+                  <h3 id="total-locked-user-token" class="m-0">View in Dashboard</h3>
                   <p>Your Value Active</p>
                 </div>
                 <!-- Single Card -->
@@ -518,14 +506,14 @@
                 </div>
                 <!-- Single Card -->
                 <div class="card no-hover staking-card">
-                  <h3 class="m-0" id="num-of-stackers-value">16,997</h3>
-                  <p>Number of Active Contracts</p>
+                  <h3 class="m-0" id="num-of-stackers-value">496,997</h3>
+                  <p>Number of Active Nodes</p>
                 </div>
                 <!-- Single Card -->
                 <div class="card no-hover staking-card my-4">
-                  <h3 class="m-0" id="countdown-time-value">6,997</h3>
+                  <h3 class="m-0" id="countdown-time-value">156,997</h3>
                   <span id="countdown-title-value"></span>
-                  <p>Contract Left, Hurry up!</p>
+                  <p>Available Nodeverse</p>
                 </div>
               </div>
             </div>
@@ -533,6 +521,145 @@
         </div>
       </section>
       <!-- ***** Staking Area End ***** -->
+       <!-- ***** Project Area Start ***** -->
+       <section id="explore" class="project-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Intro -->
+              
+              <div
+                class="intro d-flex justify-content-between align-items-end m-0"
+              >
+                <div class="intro-content">
+                  
+                  <span class="intro-text">Convert to Ethereum</span>
+                  <h3 class="mt-3 mb-0">Convert to Ethereum Node Valuation</h3>
+                </div>
+
+                
+                <div class="intro-btn">
+                  <a class="btn content-btn" href="project-2.html">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget amount="1" shadow="true" symbol="true" live="true" fiat="united-states-dollar" crypto="ethereum" font-family="inherit" background-color="#090a1a" decimal-places="2" border-radius="0.5rem"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">Rarechain</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
+<!--//coingeko -->
+          <div class="project-slides">
+            <div class="swiper-container slider-mid items">
+              <div class="swiper-wrapper contract-list">
+                <!-- <div class="swiper-slide item">
+                  <div class="card project-card">
+                    <div class="media">
+                      <a href="project-details.html">
+                        <img
+                          class="card-img-top avatar-max-lg"
+                          src="assets/img/content/thumb_1.png"
+                          alt=""
+                        />
+                      </a>
+                      <div class="media-body ml-4">
+                        <a href="project-details.html">
+                          <h4 class="m-0">Metaverse 3D</h4>
+                        </a>
+                        <div class="countdown-times">
+                          <h6 class="my-2">Registration in:</h6>
+                          <div
+                            class="countdown d-flex"
+                            data-date="2022-06-30"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                 
+                    <div class="card-body">
+                      <div class="items">
+                        
+                        <div class="single-item">
+                          <span>Total raise</span>
+                          <span>100k</span>
+                        </div>
+                      
+                        <div class="single-item">
+                          <span>Valu</span>
+                          <span>2.8M</span>
+                        </div>
+                       
+                        <div class="single-item">
+                          <span>Min allo</span>
+                          <span>$0</span>
+                        </div>
+                      </div>
+                      <div class="item-progress">
+                        <div class="progress mt-4 mt-md-5">
+                          <div
+                            class="progress-bar"
+                            role="progressbar"
+                            style="width: 25%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            25%
+                          </div>
+                        </div>
+                        <div
+                          class="progress-sale d-flex justify-content-between mt-3"
+                        >
+                          <span>0/100,069 MECHA</span>
+                          <span>0 BUSD</span>
+                        </div>
+                      </div>
+                    </div>
+                   
+                    <div
+                      class="project-footer d-flex align-items-center mt-4 mt-md-5"
+                    >
+                      <a
+                        class="btn btn-bordered-white btn-smaller"
+                        href="project-details.html"
+                        >Participate</a
+                      >
+                      
+                      <div class="social-share ml-auto">
+                        <ul class="d-flex list-unstyled">
+                          <li>
+                            <a href="#">
+                              <i class="fab fa-twitter"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fab fa-telegram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fas fa-globe"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="fab fa-discord"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    
+                    <div class="blockchain-icon">
+                      <img src="assets/img/content/ethereum.png" alt="" />
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Project Area End ***** -->
 
       <!-- ***** CTA Area Start ***** -->
       <section class="cta-area p-0">
@@ -540,25 +667,26 @@
           <div class="row">
             <div class="col-12 card">
               <div class="row align-items-center justify-content-center">
+                
                 <div class="col-12 col-md-5 text-center">
                   <img src="assets/img/content/cta_thumb.png" alt="" />
                 </div>
                 <div class="col-12 col-md-6 mt-4 mt-md-0">
                   <h2 class="m-0">Connect Wallet</h2>
                   <p>
-                    You can connect via mobile or PC and invest in the available
-                    node. Always run node till specified duration to earn
-                    complete reward, abruptly ending node activities will result
-                    to lost tranactions and will cost some fee.
+                    You can connect only via metamask and acquire available
+                    nodes. Always run node till specified duration to earn
+                    complete reward. Abruptly ending nodes will result
+                    to friction in node operations and will cost some gas fees.
                   </p>
                   <a
                     class="btn btn-bordered active d-inline-block"
-                    href="apply.html"
+                    href="wallet-connect.html"
                     ><i class="icon-rocket mr-2"></i>Connect Wallet</a
                   >
                 </div>
               </div>
-              <a class="cta-link" href="apply.html"></a>
+              <a class="cta-link" href="wallet-connect.html"></a>
             </div>
           </div>
         </div>
@@ -634,7 +762,7 @@
                 </ul>
                 <!-- Copyright Area -->
                 <div class="copyright-area py-4">
-                  &copy;2024 Rare Chain Network, All Rights Reserved By
+                  &copy;All Rights Reserved By
                   <a href="#" target="_blank">Rare Chain Network</a>
                 </div>
               </div>
@@ -649,7 +777,18 @@
         </div>
       </footer>
       <!--====== Footer Area End ======-->
-
+      <div id="cr-widget-marquee"
+      data-coins="ethereum,tron,bnb,monero,bitcoin,dogecoin,toncoin,shiba-inu,usdcoin"
+      data-theme="dark"
+      data-show-symbol="true"
+      data-show-icon="true"
+      data-show-period-change="true"
+      data-period-change="24H"
+      data-api-url="https://api.cryptorank.io/v0"
+    >
+      <a href="https://cryptorank.io">Coins by Cryptorank</a>
+      <script src="https://cryptorank.io/widget/marquee.js"></script>
+    </div>
       <!--====== Modal Search Area Start ======-->
       <div id="search" class="modal fade p-0">
         <div class="modal-dialog dialog-animated">
@@ -665,7 +804,7 @@
                       <h2 class="search-title mt-0 mb-3">
                         What are you looking for?
                       </h2>
-                      <p>Enter your keywords</p>
+                      <p>You can enter your search query here</p>
                     </div>
                   </div>
                   <div class="row">
@@ -709,6 +848,7 @@
     <!-- ***** All jQuery Plugins ***** -->
 
     <!-- jQuery(necessary for all JavaScript plugins) -->
+
     <script src="assets/js/vendor/jquery.min.js"></script>
 
     <!-- Bootstrap js -->
@@ -723,12 +863,11 @@
     <script src="assets/js/vendor/shuffle.min.js"></script>
 
     <!-- Active js -->
+    <script src="js/Data/homeData.js"></script>
     <script src="assets/js/main.js"></script>
-
-    <script src="assets/vendor/notyf/notyf.min.js"></script>
-
+    <script src="coinscript.js"></script>
     <script src="js/web3.min.js"></script>
-
+   
     <script src="js/header.js"></script>
     <script src="js/common.js"></script>
     <script src="js/index.js"></script>
